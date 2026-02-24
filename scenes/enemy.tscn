@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cjnsjlkno8e4o"]
+
+[ext_resource type="Texture2D" uid="uid://35rm6aevhihq" path="res://assets/towerDefense_tilesheet.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://rty4grudhnfp" path="res://scripts/enemy.gd" id="2_md0e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(960, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 32.01562
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=135071708]
+script = ExtResource("2_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=593638844]
+sprite_frames = SubResource("SpriteFrames_4ra3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205067729]
+shape = SubResource("CircleShape2D_5uy6h")

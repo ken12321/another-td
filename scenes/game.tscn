@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://s1nhafbac5w3"]
+
+[ext_resource type="PackedScene" uid="uid://dxhmkyluib4nc" path="res://scenes/track_node.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cjnsjlkno8e4o" path="res://scenes/enemy.tscn" id="2_lnu2h"]
+
+[node name="Game" type="Node2D" unique_id=242270250]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2121753796]
+position = Vector2(576, 324)
+
+[node name="TrackNode" parent="." unique_id=592374318 instance=ExtResource("1_yqjtg")]
+position = Vector2(25, 177)
+
+[node name="TrackNode2" parent="." unique_id=2076509186 instance=ExtResource("1_yqjtg")]
+position = Vector2(207, 329)
+track_position = 1
+
+[node name="TrackNode3" parent="." unique_id=2126983722 instance=ExtResource("1_yqjtg")]
+position = Vector2(380, 171)
+track_position = 2
+
+[node name="TrackNode4" parent="." unique_id=1128928943 instance=ExtResource("1_yqjtg")]
+position = Vector2(841, 166)
+track_position = 3
+
+[node name="TrackNode5" parent="." unique_id=1190537651 instance=ExtResource("1_yqjtg")]
+position = Vector2(854, 422)
+track_position = 4
+is_end = true
+
+[node name="CharacterBody2D" parent="." unique_id=135071708 instance=ExtResource("2_lnu2h")]
+position = Vector2(89, 145)

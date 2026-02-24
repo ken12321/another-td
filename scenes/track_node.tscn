@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxhmkyluib4nc"]
+
+[ext_resource type="Script" uid="uid://dlx8to02t3g64" path="res://scripts/track_node.gd" id="1_ypv0k"]
+
+[node name="TrackNode" type="Node2D" unique_id=592374318]
+script = ExtResource("1_ypv0k")
