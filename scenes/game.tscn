@@ -1,32 +1,41 @@
 [gd_scene format=3 uid="uid://s1nhafbac5w3"]
 
+[ext_resource type="PackedScene" uid="uid://dmreb74le2u1a" path="res://scenes/ui.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dxhmkyluib4nc" path="res://scenes/track_node.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cjnsjlkno8e4o" path="res://scenes/enemy.tscn" id="2_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=242270250]
 
+[node name="Ui" parent="." unique_id=1644482039 node_paths=PackedStringArray("container") instance=ExtResource("1_lnu2h")]
+container = NodePath("../Towers")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2121753796]
 position = Vector2(576, 324)
 
-[node name="TrackNode" parent="." unique_id=592374318 instance=ExtResource("1_yqjtg")]
-position = Vector2(25, 177)
+[node name="Towers" type="Node2D" parent="." unique_id=1127238795]
 
-[node name="TrackNode2" parent="." unique_id=2076509186 instance=ExtResource("1_yqjtg")]
-position = Vector2(207, 329)
+[node name="Enemies" type="Node2D" parent="." unique_id=302861338]
+
+[node name="Enemy" parent="Enemies" unique_id=135071708 instance=ExtResource("2_lnu2h")]
+
+[node name="Track" type="Node2D" parent="." unique_id=1502705719]
+
+[node name="TrackNode" parent="Track" unique_id=592374318 instance=ExtResource("1_yqjtg")]
+position = Vector2(31, 124)
+
+[node name="TrackNode2" parent="Track" unique_id=2076509186 instance=ExtResource("1_yqjtg")]
+position = Vector2(470, 131)
 track_position = 1
 
-[node name="TrackNode3" parent="." unique_id=2126983722 instance=ExtResource("1_yqjtg")]
-position = Vector2(380, 171)
+[node name="TrackNode3" parent="Track" unique_id=2126983722 instance=ExtResource("1_yqjtg")]
+position = Vector2(465, 337)
 track_position = 2
 
-[node name="TrackNode4" parent="." unique_id=1128928943 instance=ExtResource("1_yqjtg")]
-position = Vector2(841, 166)
+[node name="TrackNode4" parent="Track" unique_id=1128928943 instance=ExtResource("1_yqjtg")]
+position = Vector2(928, 333)
 track_position = 3
 
-[node name="TrackNode5" parent="." unique_id=1190537651 instance=ExtResource("1_yqjtg")]
-position = Vector2(854, 422)
+[node name="TrackNode5" parent="Track" unique_id=1190537651 instance=ExtResource("1_yqjtg")]
+position = Vector2(933, 628)
 track_position = 4
 is_end = true
-
-[node name="CharacterBody2D" parent="." unique_id=135071708 instance=ExtResource("2_lnu2h")]
-position = Vector2(89, 145)

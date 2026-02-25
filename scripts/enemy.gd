@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var track_nodes: Array[Node]
 var target: Node2D
 
 const SPEED = 100
@@ -7,12 +8,11 @@ const SPEED = 100
 func _set_target(t: Node2D) -> void:
 	target = t
 
-
 func _ready() -> void:
 	add_to_group("enemies")
-	var results = get_tree().get_nodes_in_group("track_nodes").filter(func(x): return x.track_position == 1)
-	target = results[0] if results.size() > 0 else null
-	
+	track_nodes = get_tree().get_root().get_node("Game/Track").get_children()
+	var first_track = track_nodes.filter(func(x): return x.track_position == 1)
+	target = first_track[0] if first_track.size() > 0 else null
 
 func _physics_process(_delta: float) -> void:
 	if (target):
@@ -23,13 +23,13 @@ func _physics_process(_delta: float) -> void:
 
 			if (!target.is_end):
 				target = _get_next_node()
-			else:
-				print("last")
+			#else:
+				#lost life logic
 
 
 func _get_next_node() -> Node2D:
 	var current_position = target.track_position
-	var track_nodes = get_tree().get_nodes_in_group("track_nodes")
+	track_nodes
 	
 	for node in track_nodes:
 		if node.track_position == current_position + 1:
