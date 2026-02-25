@@ -17,6 +17,7 @@ position = Vector2(576, 324)
 [node name="Enemies" type="Node2D" parent="." unique_id=302861338]
 
 [node name="Enemy" parent="Enemies" unique_id=135071708 instance=ExtResource("2_lnu2h")]
+position = Vector2(30, 123)
 
 [node name="Track" type="Node2D" parent="." unique_id=1502705719]
 
@@ -28,11 +29,11 @@ position = Vector2(470, 131)
 track_position = 1
 
 [node name="TrackNode3" parent="Track" unique_id=2126983722 instance=ExtResource("1_yqjtg")]
-position = Vector2(465, 337)
+position = Vector2(474, 335)
 track_position = 2
 
 [node name="TrackNode4" parent="Track" unique_id=1128928943 instance=ExtResource("1_yqjtg")]
-position = Vector2(928, 333)
+position = Vector2(931, 329)
 track_position = 3
 
 [node name="TrackNode5" parent="Track" unique_id=1190537651 instance=ExtResource("1_yqjtg")]

@@ -2,9 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dvmjlrvjeaur6" path="res://scenes/tower.tscn" id="1_37xwy"]
 [ext_resource type="Script" uid="uid://btf0guj6b2rsm" path="res://scripts/tower_data.gd" id="1_pmc62"]
+[ext_resource type="PackedScene" uid="uid://cwfbp137a4qo5" path="res://scenes/bullet.tscn" id="1_s6eb1"]
 
 [resource]
 script = ExtResource("1_pmc62")
 text = "Basic Tower"
-packed_scene = ExtResource("1_37xwy")
+damage = 1.0
+range = 100.0
+fire_rate = 1.0
+tower_scene = ExtResource("1_37xwy")
+bullet_scene = ExtResource("1_s6eb1")
 metadata/_custom_type_script = "uid://btf0guj6b2rsm"

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 
 var track_nodes: Array[Node]
 var target: Node2D
@@ -17,7 +18,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if (target):
 		look_at(target.global_position)
-		if position.distance_to(target.global_position) > 0:
+		if (position.distance_to(target.global_position) > 0):
 			global_position = global_position.move_toward(target.global_position, SPEED * _delta)
 		else:
 
@@ -32,7 +33,7 @@ func _get_next_node() -> Node2D:
 	track_nodes
 	
 	for node in track_nodes:
-		if node.track_position == current_position + 1:
+		if (node.track_position == current_position + 1):
 			return node
 			
 	return null

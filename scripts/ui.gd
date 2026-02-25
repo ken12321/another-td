@@ -23,27 +23,28 @@ func _buy_basic_tower() -> void:
 	_create_ghost()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and build_mode:
+	if (event is InputEventMouseButton):
+		if (event.button_index == MOUSE_BUTTON_LEFT && !event.pressed && build_mode):
 			_place_tower(get_global_mouse_position())
 			build_mode = false
 
 func _place_tower(world_position: Vector2) -> void:
-	var tower_scene: Tower = placing_tower_data.packed_scene.instantiate()
+	var tower_scene: Tower = placing_tower_data.tower_scene.instantiate()
 	container.add_child(tower_scene)
 	tower_scene.global_position = world_position
-	tower_scene.data = placing_tower_data.duplicate()
+	tower_scene.data = placing_tower_data.duplicate(true)
+	tower_scene.setup()
 	_clear_ghost()
 
 func _create_ghost() -> void:
-	if ghost:
+	if (ghost):
 		ghost.queue_free()
-	ghost = placing_tower_data.packed_scene.instantiate() as Tower
+	ghost = placing_tower_data.tower_scene.instantiate() as Tower
 	ghost.modulate.a = 0.5 # set alpha value
 	ghost.set_process(false)
 	container.add_child(ghost)
 
 func _clear_ghost() -> void:
-	if ghost:
+	if (ghost):
 		ghost.queue_free()
 		ghost = null

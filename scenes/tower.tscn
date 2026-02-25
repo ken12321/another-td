@@ -28,14 +28,13 @@ radius = 28.01785
 script = ExtResource("1_ay4al")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1131481119]
+rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_suq7q")
 
 [node name="Range" type="Area2D" parent="." unique_id=57795818]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=141693511]
 shape = SubResource("CircleShape2D_8ka00")
-
-[node name="ShootTimer" type="Timer" parent="." unique_id=1513592111]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2098671427]
 
