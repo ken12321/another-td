@@ -2,6 +2,7 @@ extends Control
 
 @export var basic_tower_data: TowerData
 @onready var basic_tower_button := $BasicTower
+@onready var credits_label := $CreditsLabel
 
 # Game scene
 @export var container: Node2D
@@ -12,10 +13,16 @@ var ghost: Tower
 
 func _ready() -> void:
 	basic_tower_button.pressed.connect(_buy_basic_tower)
+	
+	credits_label.text = "Credits: %d" % PlayerStats.credits
+	PlayerStats.credits_changed.connect(_on_credits_changed)
 
 func _process(_delta: float) -> void:
 	if ghost:
 		ghost.global_position = get_global_mouse_position()
+
+func _on_credits_changed(new_amount: int) -> void:
+	credits_label.text = "Credits: %d" % new_amount
 
 func _buy_basic_tower() -> void:
 	build_mode = true

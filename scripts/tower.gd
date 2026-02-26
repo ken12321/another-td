@@ -4,7 +4,10 @@ class_name Tower
 @export var data: TowerData
 
 var target: Enemy = null
+var enemies_in_range: Array[Enemy] = []
+
 var _timer: Timer
+
 
 # Called when the node enters the scene tree for the first time.
 func setup() -> void:
@@ -24,18 +27,35 @@ func _physics_process(_delta: float) -> void:
 		look_at(target.global_position)
 
 func _shoot() -> void:
-	if (target == null || !is_instance_valid(target)):
-		target = null
+	enemies_in_range = enemies_in_range.filter(func(e): return is_instance_valid(e))
+	target = _get_furthest_enemy()
+	
+	if (!target):
 		return
+	
 	_spawn_bullet()
 
 func _on_enemy_entered(body: Node2D) -> void:
-	if (body is Enemy && target == null):
-		target = body
+	if (body is Enemy):
+		enemies_in_range.append(body)
 
 func _on_enemy_exited(body: Node2D) -> void:
-	if (body == target):
-		target = null
+	if (body is Enemy):
+		enemies_in_range.erase(body)
+
+func _get_furthest_enemy() -> Enemy:
+	var furthest: Enemy = null
+	var highest_progress = -1.0
+	
+	for enemy in enemies_in_range:
+		if (!is_instance_valid(enemy)):
+			continue
+		var progress = enemy.get_track_progress()
+		if (progress > highest_progress):
+			highest_progress = progress
+			furthest = enemy
+	
+	return furthest
 
 func _spawn_bullet() -> void:
 	if data.bullet_scene == null:

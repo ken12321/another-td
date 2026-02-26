@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://s1nhafbac5w3"]
 
+[ext_resource type="Script" uid="uid://c2g1vxwpua14a" path="res://scenes/game.gd" id="1_iywne"]
+[ext_resource type="Script" uid="uid://b80ydfrv4p7gm" path="res://scripts/wave_manager.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dmreb74le2u1a" path="res://scenes/ui.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dxhmkyluib4nc" path="res://scenes/track_node.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://cjnsjlkno8e4o" path="res://scenes/enemy.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://d17mlxi10hrns" path="res://scripts/wave_data.gd" id="3_p57ef"]
+[ext_resource type="Resource" uid="uid://cmxobutm3e4cn" path="res://resources/wave_1.tres" id="4_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=242270250]
+script = ExtResource("1_iywne")
+
+[node name="WaveManager" type="Node" parent="." unique_id=51318472 node_paths=PackedStringArray("spawn_point", "enemy_container", "track")]
+script = ExtResource("1_lbhrr")
+waves = Array[ExtResource("3_p57ef")]([ExtResource("4_u5sy4")])
+spawn_point = NodePath("../Track/TrackNode")
+enemy_container = NodePath("../Enemies")
+track = NodePath("../Track")
 
 [node name="Ui" parent="." unique_id=1644482039 node_paths=PackedStringArray("container") instance=ExtResource("1_lnu2h")]
 container = NodePath("../Towers")
@@ -15,9 +26,6 @@ position = Vector2(576, 324)
 [node name="Towers" type="Node2D" parent="." unique_id=1127238795]
 
 [node name="Enemies" type="Node2D" parent="." unique_id=302861338]
-
-[node name="Enemy" parent="Enemies" unique_id=135071708 instance=ExtResource("2_lnu2h")]
-position = Vector2(30, 123)
 
 [node name="Track" type="Node2D" parent="." unique_id=1502705719]
 

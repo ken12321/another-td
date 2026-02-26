@@ -15,6 +15,16 @@ basic_tower_data = ExtResource("2_x4jx1")
 
 [node name="BasicTower" type="Button" parent="." unique_id=872348952]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 8.0
+offset_top = 608.0
+offset_right = 106.0
+offset_bottom = 639.0
 text = "Basic tower"
+
+[node name="CreditsLabel" type="Label" parent="." unique_id=625798193]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 258.0
+offset_bottom = 29.0
+text = "Credits:"
