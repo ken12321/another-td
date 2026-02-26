@@ -3,7 +3,7 @@ extends Resource
 class_name TowerData
 
 @export var text: String
-#@export var cost: int
+@export var cost: int
 #@export var upgrades: Array[Upgrade]
 @export var damage: float
 @export var range: float

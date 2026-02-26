@@ -28,7 +28,6 @@ func _shoot() -> void:
 		target = null
 		return
 	_spawn_bullet()
-	#target.take_damage(data.damage)
 
 func _on_enemy_entered(body: Node2D) -> void:
 	if (body is Enemy && target == null):

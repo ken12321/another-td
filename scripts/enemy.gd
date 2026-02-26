@@ -1,10 +1,8 @@
 extends CharacterBody2D
 class_name Enemy
 
-#signal died(reward: int)
-
 @export var max_health: float = 1
-#@export var reward: int = 10
+@export var reward: int = 10
 
 var track_nodes: Array[Node]
 var target: Node2D
@@ -41,7 +39,7 @@ func take_damage(damage: float) -> void:
 		die()
 
 func die() -> void:
-	#died.emit(reward)
+	PlayerStats.add_credits(reward)
 	queue_free()
 
 func _get_next_node() -> Node2D:

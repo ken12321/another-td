@@ -29,6 +29,10 @@ func _input(event: InputEvent) -> void:
 			build_mode = false
 
 func _place_tower(world_position: Vector2) -> void:
+	if (!PlayerStats.spend_credits(placing_tower_data.cost)):
+		print("not enough credits") # todo: do something here
+		_clear_ghost()
+		return
 	var tower_scene: Tower = placing_tower_data.tower_scene.instantiate()
 	container.add_child(tower_scene)
 	tower_scene.global_position = world_position
