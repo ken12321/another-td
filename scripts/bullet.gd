@@ -1,7 +1,7 @@
 extends Node2D
 class_name Bullet
 
-const MAX_RANGE : float = 1000 # Distance before bullet freesBullet
+const MAX_RANGE : float = 1000 # Distance before bullet frees
 var _distance_travelled: float = 0
 
 var direction: Vector2
@@ -18,6 +18,6 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_area_2d_body_entered(body: Node) -> void:
-	if (body == Enemy):
-		# body.take_damage(damage)
+	if (body is Enemy):
+		body.take_damage(damage)
 		queue_free()
