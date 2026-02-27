@@ -4,7 +4,7 @@ class_name Tower
 @export var data: TowerData
 @onready var animated_sprite = $AnimatedSprite2D
 
-const BULLET_SPAWN_FRAME = 4
+const BULLET_SPAWN_FRAME = 5
 
 var target: Enemy = null
 var enemies_in_range: Array[Enemy] = []
