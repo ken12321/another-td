@@ -1,20 +1,60 @@
 [gd_scene format=3 uid="uid://dvmjlrvjeaur6"]
 
-[ext_resource type="Texture2D" uid="uid://35rm6aevhihq" path="res://assets/towerDefense_tilesheet.png" id="1_2x682"]
 [ext_resource type="Script" uid="uid://cn5th8mupncff" path="res://scripts/tower.gd" id="1_ay4al"]
+[ext_resource type="Texture2D" uid="uid://b7tkq6geylrni" path="res://assets/basic_tower.png" id="2_ay4al"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sofxa"]
-atlas = ExtResource("1_2x682")
-region = Rect2(1216, 640, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktxwe"]
+atlas = ExtResource("2_ay4al")
+region = Rect2(0, 0, 28, 67)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_suq7q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay4al"]
+atlas = ExtResource("2_ay4al")
+region = Rect2(0, 0, 28, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrbg1"]
+atlas = ExtResource("2_ay4al")
+region = Rect2(28, 0, 28, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfguu"]
+atlas = ExtResource("2_ay4al")
+region = Rect2(56, 0, 28, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85u2j"]
+atlas = ExtResource("2_ay4al")
+region = Rect2(84, 0, 28, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl0gn"]
+atlas = ExtResource("2_ay4al")
+region = Rect2(112, 0, 28, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrbg1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sofxa")
+"texture": SubResource("AtlasTexture_ktxwe")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay4al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrbg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfguu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85u2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl0gn")
+}],
+"loop": true,
+"name": &"shooting",
 "speed": 5.0
 }]
 
@@ -28,8 +68,9 @@ radius = 28.01785
 script = ExtResource("1_ay4al")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1131481119]
-rotation = 1.5707964
-sprite_frames = SubResource("SpriteFrames_suq7q")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qrbg1")
+animation = &"shooting"
 
 [node name="Range" type="Area2D" parent="." unique_id=57795818]
 
