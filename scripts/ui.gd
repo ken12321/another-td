@@ -3,6 +3,7 @@ extends Control
 @export var basic_tower_data: TowerData
 @onready var basic_tower_button := $BasicTower
 @onready var credits_label := $CreditsLabel
+@onready var wave_label := $WaveLabel
 
 # Game scene
 @export var container: Node2D
@@ -15,7 +16,9 @@ func _ready() -> void:
 	basic_tower_button.pressed.connect(_buy_basic_tower)
 	
 	credits_label.text = "Credits: %d" % PlayerStats.credits
+	wave_label.text = "Wave: %d" % PlayerStats.current_wave
 	PlayerStats.credits_changed.connect(_on_credits_changed)
+	PlayerStats.wave_changed.connect(_on_wave_changed)
 
 func _process(_delta: float) -> void:
 	if ghost:
@@ -23,6 +26,9 @@ func _process(_delta: float) -> void:
 
 func _on_credits_changed(new_amount: int) -> void:
 	credits_label.text = "Credits: %d" % new_amount
+
+func _on_wave_changed(new_wave: int) -> void:
+	wave_label.text = "Wave: %d" % new_wave
 
 func _buy_basic_tower() -> void:
 	build_mode = true

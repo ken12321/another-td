@@ -28,3 +28,11 @@ offset_top = 6.0
 offset_right = 258.0
 offset_bottom = 29.0
 text = "Credits:"
+
+[node name="WaveLabel" type="Label" parent="." unique_id=262683807]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 71.0
+offset_bottom = 55.0
+text = "Rounds:"

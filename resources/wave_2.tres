@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://doicjreanvjee"]
+
+[ext_resource type="Script" uid="uid://d17mlxi10hrns" path="res://scripts/wave_data.gd" id="1_cfncj"]
+[ext_resource type="Script" uid="uid://b7r0qm1lughnk" path="res://scripts/wave_entry.gd" id="2_ef431"]
+[ext_resource type="PackedScene" uid="uid://cjnsjlkno8e4o" path="res://scenes/enemy.tscn" id="3_ef431"]
+
+[sub_resource type="Resource" id="Resource_n21ak"]
+script = ExtResource("2_ef431")
+enemy_scene = ExtResource("3_ef431")
+count = 15
+spawn_interval = 0.5
+metadata/_custom_type_script = "uid://b7r0qm1lughnk"
+
+[resource]
+script = ExtResource("1_cfncj")
+waves = Array[ExtResource("2_ef431")]([SubResource("Resource_n21ak")])
+metadata/_custom_type_script = "uid://d17mlxi10hrns"
