@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Enemy
 
+signal died
+
 @export var max_health: float = 1
 @export var reward: int = 10
 
@@ -24,6 +26,7 @@ func take_damage(damage: float) -> void:
 		die()
 
 func die() -> void:
+	died.emit()
 	PlayerStats.add_credits(reward)
 	queue_free()
 
