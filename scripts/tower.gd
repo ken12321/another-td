@@ -5,7 +5,7 @@ class_name Tower
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bullet_spawnpoint = $BulletSpawnPoint
 
-const BULLET_SPAWN_FRAME = 5
+const BULLET_SPAWN_FRAME = 4
 
 var target: Enemy = null
 var enemies_in_range: Array[Enemy] = []

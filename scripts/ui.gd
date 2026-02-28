@@ -5,7 +5,6 @@ extends Control
 @onready var credits_label := $CreditsLabel
 @onready var wave_label := $WaveLabel
 
-
 # Game scene
 @export var container: Node2D
 @export var tile_map : TileMapLayer
@@ -20,7 +19,7 @@ var ghost: Tower
 
 func _ready() -> void:
 	basic_tower_button.pressed.connect(_buy_basic_tower)
-	
+
 	credits_label.text = "Credits: %d" % PlayerStats.credits
 	wave_label.text = "Wave: %d" % PlayerStats.current_wave
 	PlayerStats.credits_changed.connect(_on_credits_changed)
@@ -56,7 +55,6 @@ func _can_place(tile_coords: Vector2i) -> bool:
 	for tile in _get_tower_tiles(tile_coords):
 		if occupied_tiles.has(tile) || blocked_tiles.has(tile):
 			return false
-	
 	return true
 
 func _input(event: InputEvent) -> void:
@@ -66,9 +64,7 @@ func _input(event: InputEvent) -> void:
 			build_mode = false
 		if (event.button_index == MOUSE_BUTTON_RIGHT && !event.pressed):
 			var coord = tile_map.local_to_map(tile_map.to_local(get_global_mouse_position()))
-			print(coord)
 			tile_map.set_cell(coord, 2, Vector2i(0,0))
-			
 
 func _place_tower(world_position: Vector2) -> void:
 	var tile_coords = tile_map.local_to_map(tile_map.to_local(world_position))

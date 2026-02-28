@@ -4572,6 +4572,7 @@ sources/1 = SubResource("TileSetAtlasSource_gee14")
 sources/2 = SubResource("TileSetAtlasSource_kvpfn")
 
 [node name="Game" type="Node2D" unique_id=242270250]
+y_sort_enabled = true
 script = ExtResource("1_iywne")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1350458497]
@@ -4593,8 +4594,10 @@ tile_map = NodePath("../TileMapLayer")
 position = Vector2(576, 324)
 
 [node name="Towers" type="Node2D" parent="." unique_id=1127238795]
+y_sort_enabled = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=302861338]
+y_sort_enabled = true
 
 [node name="Track" type="Node2D" parent="." unique_id=1502705719]
 
@@ -4623,4 +4626,5 @@ track_position = 5
 is_end = true
 
 [node name="Base" parent="." unique_id=658109281 instance=ExtResource("10_vtaks")]
+y_sort_enabled = true
 position = Vector2(688, 551)

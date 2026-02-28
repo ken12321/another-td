@@ -54,8 +54,9 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if (!target.is_end):
 			target = _get_next_node()
-		#else:
-			#lost life logic
+		else:
+			PlayerStats.damage_base(100)
+			print("game over womp womp")
 
 func _set_target(t: Node2D) -> void:
 	target = t

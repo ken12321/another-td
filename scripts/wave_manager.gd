@@ -17,7 +17,7 @@ func start_wave() -> void:
 		print("all waves complete")
 		# todo win condition
 		return
-	
+
 	var wave = waves[current_wave_index]
 	_spawn_wave(wave)
 
@@ -46,6 +46,5 @@ func _spawn_enemy(enemy_scene: PackedScene) -> void:
 
 func _on_enemy_died() -> void:
 	enemies_remaining -= 1
-	print(enemies_remaining)
 	if (enemies_remaining <= 0 && enemies_in_queue <= 0):
 		wave_completed.emit()
