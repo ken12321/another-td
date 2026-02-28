@@ -29,7 +29,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if ghost:
 		var snapped_position = _get_snapped_position(get_global_mouse_position())
+		var tile_coords = tile_map.local_to_map(tile_map.to_local(snapped_position))
 		ghost.global_position = snapped_position
+		if (!_can_place(tile_coords)):
+			ghost.modulate = Color(1, 0, 0, 0.5)
+		else:
+			ghost.modulate = Color(1, 1, 1, 0.5)
 
 # For isometric grid snapping
 func _get_snapped_position(world_position: Vector2) -> Vector2:
