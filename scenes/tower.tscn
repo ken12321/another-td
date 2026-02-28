@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dvmjlrvjeaur6"]
 
 [ext_resource type="Script" uid="uid://cn5th8mupncff" path="res://scripts/tower.gd" id="1_ay4al"]
-[ext_resource type="Texture2D" uid="uid://b7tkq6geylrni" path="res://assets/basic_tower.png" id="2_ay4al"]
 [ext_resource type="Texture2D" uid="uid://bo1mrpwr3nrpn" path="res://assets/basic_tower1.png" id="3_ktxwe"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktxwe"]
-atlas = ExtResource("2_ay4al")
-region = Rect2(0, 0, 28, 67)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktxwe"]
+radius = 87.5
+height = 350.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_giult"]
+radius = 28.01785
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqps3"]
 atlas = ExtResource("3_ktxwe")
@@ -32,39 +34,11 @@ region = Rect2(271, 3, 64, 205)
 atlas = ExtResource("3_ktxwe")
 region = Rect2(338, 3, 64, 205)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ay4al"]
-atlas = ExtResource("2_ay4al")
-region = Rect2(0, 0, 28, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrbg1"]
-atlas = ExtResource("2_ay4al")
-region = Rect2(28, 0, 28, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfguu"]
-atlas = ExtResource("2_ay4al")
-region = Rect2(56, 0, 28, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85u2j"]
-atlas = ExtResource("2_ay4al")
-region = Rect2(84, 0, 28, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xl0gn"]
-atlas = ExtResource("2_ay4al")
-region = Rect2(112, 0, 28, 67)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_qrbg1"]
 animations = [{
 "frames": [],
 "loop": true,
 "name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ktxwe")
-}],
-"loop": true,
-"name": &"defaultlegacy",
 "speed": 5.0
 }, {
 "frames": [{
@@ -89,52 +63,30 @@ animations = [{
 "loop": true,
 "name": &"shooting",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ay4al")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qrbg1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jfguu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85u2j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xl0gn")
-}],
-"loop": true,
-"name": &"shootinglegacy",
-"speed": 5.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8ka00"]
-radius = 179.02513
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_giult"]
-radius = 28.01785
 
 [node name="Tower" type="Node2D" unique_id=1004064423]
 script = ExtResource("1_ay4al")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1131481119]
-position = Vector2(0, 1)
-scale = Vector2(0.93264717, 0.93264717)
-sprite_frames = SubResource("SpriteFrames_qrbg1")
-animation = &"shooting"
-frame_progress = 0.8370863
-
 [node name="Range" type="Area2D" parent="." unique_id=57795818]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=141693511]
-shape = SubResource("CircleShape2D_8ka00")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ktxwe")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2098671427]
 visible = false
 
 [node name="Footprint" type="CollisionShape2D" parent="Area2D" unique_id=250558440]
+visible = false
 shape = SubResource("CircleShape2D_giult")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1131481119]
+position = Vector2(0, -83)
+sprite_frames = SubResource("SpriteFrames_qrbg1")
+animation = &"shooting"
+frame = 5
+frame_progress = 0.4743414
+
+[node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=992025518]
+position = Vector2(0, -172)
