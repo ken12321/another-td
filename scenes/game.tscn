@@ -4584,8 +4584,9 @@ spawn_point = NodePath("../Track/TrackNode")
 enemy_container = NodePath("../Enemies")
 track = NodePath("../Track")
 
-[node name="Ui" parent="." unique_id=1644482039 node_paths=PackedStringArray("container") instance=ExtResource("1_lnu2h")]
+[node name="Ui" parent="." unique_id=1644482039 node_paths=PackedStringArray("container", "tile_map") instance=ExtResource("1_lnu2h")]
 container = NodePath("../Towers")
+tile_map = NodePath("../TileMapLayer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2121753796]
 position = Vector2(576, 324)

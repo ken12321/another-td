@@ -3,7 +3,7 @@ extends Node
 signal credits_changed(new_amount: int)
 signal wave_changed(new_wave: int)
 
-var credits: int = 10: # todo figure out starting cash
+var credits: int = 1000: # todo figure out starting cash
 	set(value):
 		credits = value
 		credits_changed.emit(credits)
