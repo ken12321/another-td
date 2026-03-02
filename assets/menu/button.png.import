@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo1mrpwr3nrpn"
-path="res://.godot/imported/basic_tower1.png-cb985847d10283ed89306837ed6d4627.ctex"
+uid="uid://s8r8xxhx0o4s"
+path="res://.godot/imported/button.png-bca0d9f3e1e7bc97411cf7086e7888a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/basic_tower1.png"
-dest_files=["res://.godot/imported/basic_tower1.png-cb985847d10283ed89306837ed6d4627.ctex"]
+source_file="res://assets/menu/button.png"
+dest_files=["res://.godot/imported/button.png-bca0d9f3e1e7bc97411cf7086e7888a8.ctex"]
 
 [params]
 
