@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvmjlrvjeaur6"]
 
 [ext_resource type="Script" uid="uid://cn5th8mupncff" path="res://scripts/tower.gd" id="1_ay4al"]
-[ext_resource type="Texture2D" uid="uid://b72kx3ro1g5ps" path="res://assets/base_tower2.png" id="2_ay4al"]
+[ext_resource type="Texture2D" uid="uid://b72kx3ro1g5ps" path="res://assets/structures/base_tower2.png" id="2_ay4al"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktxwe"]
 radius = 124.5

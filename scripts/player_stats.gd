@@ -18,6 +18,8 @@ var current_wave: int = 1:
 
 var base_health: int = 100:
 	set(value):
+		if(value < base_health):
+			base_damaged.emit()
 		base_health = value
 		if(base_health <= 0):
 			base_destroyed.emit()

@@ -3,6 +3,11 @@ class_name Enemy
 
 signal died
 
+# Attacks are only relevant when enemies reach the Base
+@export var attack_speed: float = 1
+@export var attack_damage: int = 10
+var _attack_timer: float = 0.0
+
 @export var max_health: float = 1
 @export var reward: int = 10
 
@@ -55,8 +60,11 @@ func _physics_process(_delta: float) -> void:
 		if (!target.is_end):
 			target = _get_next_node()
 		else:
-			PlayerStats.damage_base(100)
-			print("game over womp womp")
+			_attack_timer += _delta
+			if (_attack_timer >= 1.0 / attack_speed):
+				_attack_timer = 0.0
+				PlayerStats.damage_base(attack_damage)
+				print(PlayerStats.base_health)
 
 func _set_target(t: Node2D) -> void:
 	target = t
