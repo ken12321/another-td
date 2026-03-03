@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://dqnvrf14ln1vb"]
+
+[ext_resource type="Texture2D" uid="uid://brfh303jo1b1p" path="res://assets/menu/S.png" id="1_gvms8"]
+[ext_resource type="Texture2D" uid="uid://dityelk3nq2mm" path="res://assets/menu/E.png" id="2_lghep"]
+[ext_resource type="Texture2D" uid="uid://bbek076prb5hl" path="res://assets/menu/T.png" id="3_sp6i2"]
+[ext_resource type="Texture2D" uid="uid://h8wdcjl61jni" path="res://assets/menu/I.png" id="4_sus0a"]
+[ext_resource type="Texture2D" uid="uid://dmda1g748vj47" path="res://assets/menu/N.png" id="5_064de"]
+[ext_resource type="Texture2D" uid="uid://s0r3smwgi4vx" path="res://assets/menu/G.png" id="6_p33i1"]
+
+[sub_resource type="Animation" id="Animation_gvms8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("T:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-48, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("E:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-80, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("S:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-112, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("S2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("G:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("N:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("I:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("T2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lghep"]
+resource_name = "settingsanim"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("T:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-48, 0), Vector2(-48, -4), Vector2(-48, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("E:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-80, 0), Vector2(-80, 4), Vector2(-80, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("S:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-112, 0), Vector2(-112, -4), Vector2(-112, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("S2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 0), Vector2(112, 4), Vector2(112, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("G:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 0), Vector2(80, -4), Vector2(80, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("N:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(48, 0), Vector2(48, 4), Vector2(48, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("I:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 0), Vector2(16, -4), Vector2(16, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("T2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-16, 0), Vector2(-16, 4), Vector2(-16, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sp6i2"]
+_data = {
+&"RESET": SubResource("Animation_gvms8"),
+&"settingsanim": SubResource("Animation_lghep")
+}
+
+[node name="SettingsText" type="Node2D" unique_id=2020754358]
+
+[node name="S" type="Sprite2D" parent="." unique_id=410732606]
+position = Vector2(-112, 0)
+texture = ExtResource("1_gvms8")
+
+[node name="E" type="Sprite2D" parent="." unique_id=146754053]
+position = Vector2(-80, 0)
+texture = ExtResource("2_lghep")
+
+[node name="T" type="Sprite2D" parent="." unique_id=1996631903]
+position = Vector2(-48, 0)
+texture = ExtResource("3_sp6i2")
+
+[node name="T2" type="Sprite2D" parent="." unique_id=1052869984]
+position = Vector2(-16, 0)
+texture = ExtResource("3_sp6i2")
+
+[node name="I" type="Sprite2D" parent="." unique_id=1583731433]
+position = Vector2(16, 0)
+texture = ExtResource("4_sus0a")
+
+[node name="N" type="Sprite2D" parent="." unique_id=1906168082]
+position = Vector2(48, 0)
+texture = ExtResource("5_064de")
+
+[node name="G" type="Sprite2D" parent="." unique_id=882748982]
+position = Vector2(80, 0)
+texture = ExtResource("6_p33i1")
+
+[node name="S2" type="Sprite2D" parent="." unique_id=1779287057]
+position = Vector2(112, 0)
+texture = ExtResource("1_gvms8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=66320503]
+libraries/ = SubResource("AnimationLibrary_sp6i2")
+autoplay = &"settingsanim"
