@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://35rm6aevhihq" path="res://assets/towerDefense_tilesheet.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://rty4grudhnfp" path="res://scripts/enemy.gd" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://d13o1ae60wc83" path="res://assets/enemy/knight.png" id="2_xwavj"]
+[ext_resource type="Texture2D" uid="uid://dpja5aanpfpgv" path="res://assets/enemy/knight2.png" id="3_nenq2"]
+[ext_resource type="Texture2D" uid="uid://cqdfhc4e3m6fy" path="res://assets/enemy/knight3.png" id="5_md484"]
+[ext_resource type="Texture2D" uid="uid://b7poqmajhgfnp" path="res://assets/enemy/knight4.png" id="6_ipns3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
 atlas = ExtResource("1_7p1mj")
@@ -11,10 +15,42 @@ region = Rect2(960, 640, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_xwavj")
+}],
+"loop": true,
+"name": &"bottomleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nenq2")
+}],
+"loop": true,
+"name": &"bottomright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_md0e3")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_md484")
+}],
+"loop": true,
+"name": &"topleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ipns3")
+}],
+"loop": true,
+"name": &"topright",
 "speed": 5.0
 }]
 
@@ -26,6 +62,7 @@ script = ExtResource("2_md0e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=593638844]
 sprite_frames = SubResource("SpriteFrames_4ra3w")
+animation = &"bottomleft"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205067729]
 shape = SubResource("CircleShape2D_5uy6h")
