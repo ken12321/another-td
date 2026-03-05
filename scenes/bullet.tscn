@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
 
 [node name="Bullet" type="Node2D" unique_id=1880566362]
+y_sort_enabled = true
 script = ExtResource("1_y25gk")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1861248625]

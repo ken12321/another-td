@@ -58,6 +58,7 @@ animations = [{
 radius = 17.0
 
 [node name="Knight" type="CharacterBody2D" unique_id=135071708]
+y_sort_enabled = true
 script = ExtResource("1_n53qi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=593638844]

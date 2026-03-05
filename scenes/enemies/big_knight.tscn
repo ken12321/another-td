@@ -53,6 +53,7 @@ radius = 19.0
 script = ExtResource("1_ku1o5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=396613272]
+y_sort_enabled = true
 scale = Vector2(1.3125, 1.3125)
 sprite_frames = SubResource("SpriteFrames_r20r3")
 animation = &"walk_southeast"

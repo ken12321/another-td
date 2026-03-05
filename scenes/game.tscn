@@ -4627,4 +4627,4 @@ is_end = true
 
 [node name="Base" parent="." unique_id=658109281 instance=ExtResource("10_vtaks")]
 y_sort_enabled = true
-position = Vector2(688, 551)
+position = Vector2(687, 632)
