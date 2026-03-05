@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cjnsjlkno8e4o"]
+
+[ext_resource type="Script" uid="uid://rty4grudhnfp" path="res://scripts/enemy.gd" id="1_n53qi"]
+[ext_resource type="Texture2D" uid="uid://35rm6aevhihq" path="res://assets/towerDefense_tilesheet.png" id="2_lja41"]
+[ext_resource type="Texture2D" uid="uid://b7poqmajhgfnp" path="res://assets/enemy/knight4.png" id="3_fdn1f"]
+[ext_resource type="Texture2D" uid="uid://cqdfhc4e3m6fy" path="res://assets/enemy/knight3.png" id="4_vrys7"]
+[ext_resource type="Texture2D" uid="uid://dpja5aanpfpgv" path="res://assets/enemy/knight2.png" id="5_y4h3y"]
+[ext_resource type="Texture2D" uid="uid://d13o1ae60wc83" path="res://assets/enemy/knight.png" id="6_6vfas"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("2_lja41")
+region = Rect2(960, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fdn1f")
+}],
+"loop": true,
+"name": &"walk_northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vrys7")
+}],
+"loop": true,
+"name": &"walk_northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y4h3y")
+}],
+"loop": true,
+"name": &"walk_southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6vfas")
+}],
+"loop": true,
+"name": &"walk_southwest",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 17.0
+
+[node name="Knight" type="CharacterBody2D" unique_id=135071708]
+script = ExtResource("1_n53qi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=593638844]
+sprite_frames = SubResource("SpriteFrames_4ra3w")
+animation = &"walk_southwest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205067729]
+shape = SubResource("CircleShape2D_5uy6h")

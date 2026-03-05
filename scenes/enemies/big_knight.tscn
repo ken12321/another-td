@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://khwt1echy68"]
+
+[ext_resource type="Texture2D" uid="uid://cbhg2e5vte756" path="res://assets/enemy/bigknight4.png" id="1_f3ddv"]
+[ext_resource type="Script" uid="uid://rty4grudhnfp" path="res://scripts/enemy.gd" id="1_ku1o5"]
+[ext_resource type="Texture2D" uid="uid://rbk2coraetdp" path="res://assets/enemy/bigknight3.png" id="2_ku1o5"]
+[ext_resource type="Texture2D" uid="uid://deciv7h1l7gb5" path="res://assets/enemy/bigknight.png" id="3_cx2t5"]
+[ext_resource type="Texture2D" uid="uid://c4t5jhq378q6r" path="res://assets/enemy/bigknight2.png" id="4_rjrup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r20r3"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f3ddv")
+}],
+"loop": true,
+"name": &"walk_northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ku1o5")
+}],
+"loop": true,
+"name": &"walk_northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rjrup")
+}],
+"loop": true,
+"name": &"walk_southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cx2t5")
+}],
+"loop": true,
+"name": &"walk_southwest",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3ddv"]
+radius = 19.0
+
+[node name="BigKnight" type="CharacterBody2D" unique_id=811272548]
+script = ExtResource("1_ku1o5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=396613272]
+scale = Vector2(1.3125, 1.3125)
+sprite_frames = SubResource("SpriteFrames_r20r3")
+animation = &"walk_southeast"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117079249]
+shape = SubResource("CircleShape2D_f3ddv")

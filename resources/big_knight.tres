@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://564qwwg210ro"]
+
+[ext_resource type="PackedScene" uid="uid://khwt1echy68" path="res://scenes/enemies/big_knight.tscn" id="1_fq30v"]
+[ext_resource type="Script" uid="uid://dxu5gtdn1bmat" path="res://scripts/enemy_data.gd" id="1_ndp6t"]
+
+[resource]
+script = ExtResource("1_ndp6t")
+text = "Big Knight"
+max_health = 500
+speed = 50.0
+damage = 20.0
+attack_speed = 1.0
+enemy_scene = ExtResource("1_fq30v")
+reward = 30
+metadata/_custom_type_script = "uid://dxu5gtdn1bmat"

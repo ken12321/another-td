@@ -32,15 +32,17 @@ func _spawn_wave(wave_data: WaveData) -> void:
 
 func _spawn_entry(entry: WaveEntry) -> void:
 	for enemy in entry.count:
-		_spawn_enemy(entry.enemy_scene)
+		_spawn_enemy(entry.enemy_data)
 		await get_tree().create_timer(entry.spawn_interval).timeout
 
-func _spawn_enemy(enemy_scene: PackedScene) -> void:
+func _spawn_enemy(enemy_data: EnemyData) -> void:
 	enemies_remaining += 1
 	enemies_in_queue -= 1
-	var enemy := enemy_scene.instantiate() as Enemy
+	var enemy_scene = enemy_data.enemy_scene
+	var enemy := enemy_scene.instantiate()
 	enemy_container.add_child(enemy)
 	enemy.global_position = spawn_point.global_position
+	enemy.data = enemy_data.duplicate(true)
 	enemy.died.connect(_on_enemy_died)
 	enemy.setup(track.get_children())
 
