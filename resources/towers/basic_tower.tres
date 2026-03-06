@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://1yvqej1neujx"]
+
+[ext_resource type="PackedScene" uid="uid://cwfbp137a4qo5" path="res://scenes/towers/bullet.tscn" id="1_0at53"]
+[ext_resource type="Script" uid="uid://btf0guj6b2rsm" path="res://scripts/tower_data.gd" id="2_1r6fu"]
+[ext_resource type="PackedScene" uid="uid://dvmjlrvjeaur6" path="res://scenes/towers/basic_tower.tscn" id="3_j1u8g"]
+
+[resource]
+script = ExtResource("2_1r6fu")
+text = "Basic Tower"
+cost = 300
+damage = 10.0
+range = 130.0
+fire_rate = 0.75
+tower_scene = ExtResource("3_j1u8g")
+bullet_scene = ExtResource("1_0at53")
+bullet_spawn_frame = 4
+metadata/_custom_type_script = "uid://btf0guj6b2rsm"

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://0h8hwnfug1eh"]
 
+[ext_resource type="Script" uid="uid://cw84o31qqjyj8" path="res://scripts/menu/loss_menu.gd" id="1_01kqn"]
 [ext_resource type="Texture2D" uid="uid://dg0wnphr8t865" path="res://assets/menu/screen.png" id="1_a23ou"]
 
 [node name="LossMenu" type="Node2D" unique_id=299507222]
+script = ExtResource("1_01kqn")
 
 [node name="Screen" type="Sprite2D" parent="." unique_id=1464780016]
 position = Vector2(576, 324.00003)
@@ -39,7 +41,7 @@ theme_override_font_sizes/font_size = 29
 text = "menu"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="." unique_id=1797185594]
+[node name="RoundLabel" type="Label" parent="." unique_id=1797185594]
 anchors_preset = -1
 anchor_left = -0.09623016
 anchor_top = 1.3651686
@@ -50,7 +52,7 @@ offset_top = 395.0
 offset_right = 1077.0
 offset_bottom = 573.0
 theme_override_font_sizes/font_size = 37
-text = "this is where i would put your high score"
+text = "you got to round"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

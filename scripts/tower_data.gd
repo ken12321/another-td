@@ -10,3 +10,4 @@ class_name TowerData
 @export var fire_rate: float
 @export var tower_scene: PackedScene
 @export var bullet_scene: PackedScene
+@export var bullet_spawn_frame: int

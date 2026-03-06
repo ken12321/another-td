@@ -14,7 +14,7 @@ var enemies_in_queue: int = 0
 
 func start_wave() -> void:
 	if (current_wave_index >= waves.size()):
-		get_tree().change_scene_to_file("res://scenes/win_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/menu/win_menu.tscn")
 		return
 
 	var wave = waves[current_wave_index]

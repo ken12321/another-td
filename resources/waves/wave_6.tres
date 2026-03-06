@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://bbkwy8md4bupe"]
+
+[ext_resource type="Script" uid="uid://d17mlxi10hrns" path="res://scripts/wave_data.gd" id="1_i0wmj"]
+[ext_resource type="Script" uid="uid://b7r0qm1lughnk" path="res://scripts/wave_entry.gd" id="2_wfy1q"]
+[ext_resource type="Resource" uid="uid://7o0kxilcf75v" path="res://resources/enemies/knight.tres" id="3_rdd5j"]
+[ext_resource type="Resource" uid="uid://564qwwg210ro" path="res://resources/enemies/big_knight.tres" id="4_wfy1q"]
+
+[sub_resource type="Resource" id="Resource_n21ak"]
+script = ExtResource("2_wfy1q")
+enemy_data = ExtResource("3_rdd5j")
+count = 7
+spawn_interval = 0.5
+metadata/_custom_type_script = "uid://b7r0qm1lughnk"
+
+[sub_resource type="Resource" id="Resource_rdd5j"]
+script = ExtResource("2_wfy1q")
+enemy_data = ExtResource("4_wfy1q")
+count = 1
+metadata/_custom_type_script = "uid://b7r0qm1lughnk"
+
+[resource]
+script = ExtResource("1_i0wmj")
+waves = Array[ExtResource("2_wfy1q")]([SubResource("Resource_n21ak"), SubResource("Resource_rdd5j")])
+metadata/_custom_type_script = "uid://d17mlxi10hrns"

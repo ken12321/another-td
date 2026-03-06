@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dmreb74le2u1a"]
 
 [ext_resource type="Script" uid="uid://80sdklbikyhd" path="res://scripts/ui.gd" id="1_nt7q6"]
-[ext_resource type="Resource" uid="uid://1yvqej1neujx" path="res://resources/basic_tower.tres" id="2_x4jx1"]
+[ext_resource type="Resource" uid="uid://1yvqej1neujx" path="res://resources/towers/basic_tower.tres" id="2_x4jx1"]
+[ext_resource type="Resource" uid="uid://cg1vtdw66s0db" path="res://resources/towers/fireball_tower.tres" id="3_yev5y"]
 
 [node name="Ui" type="Control" unique_id=1644482039]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nt7q6")
 basic_tower_data = ExtResource("2_x4jx1")
+fireball_tower_data = ExtResource("3_yev5y")
 
 [node name="BasicTower" type="Button" parent="." unique_id=872348952]
 layout_mode = 0
@@ -36,3 +38,11 @@ offset_top = 32.0
 offset_right = 71.0
 offset_bottom = 55.0
 text = "Rounds:"
+
+[node name="FireballTower" type="Button" parent="." unique_id=166752191]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 603.0
+offset_right = 273.0
+offset_bottom = 639.0
+text = "Fireball Tower"

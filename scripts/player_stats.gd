@@ -6,7 +6,7 @@ signal wave_changed(new_wave: int)
 signal base_damaged(damage: int)
 signal base_destroyed()
 
-var credits: int = 1000: # todo figure out starting cash
+var credits: int = 600:
 	set(value):
 		credits = value
 		credits_changed.emit(credits)

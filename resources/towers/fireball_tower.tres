@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://cg1vtdw66s0db"]
+
+[ext_resource type="PackedScene" uid="uid://b5vjaul3l2qxp" path="res://scenes/towers/fireball.tscn" id="1_1i80x"]
+[ext_resource type="Script" uid="uid://btf0guj6b2rsm" path="res://scripts/tower_data.gd" id="1_ttdj4"]
+[ext_resource type="PackedScene" uid="uid://cvfms0t7mpamo" path="res://scenes/towers/fireball_tower.tscn" id="3_cnmb6"]
+
+[resource]
+script = ExtResource("1_ttdj4")
+cost = 1
+damage = 1.0
+range = 130.0
+fire_rate = 1.0
+tower_scene = ExtResource("3_cnmb6")
+bullet_scene = ExtResource("1_1i80x")
+bullet_spawn_frame = 3
+metadata/_custom_type_script = "uid://btf0guj6b2rsm"

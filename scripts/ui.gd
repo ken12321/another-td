@@ -2,6 +2,8 @@ extends Control
 
 @export var basic_tower_data: TowerData
 @onready var basic_tower_button := $BasicTower
+@export var fireball_tower_data: TowerData
+@onready var fireball_tower_button := $FireballTower
 @onready var credits_label := $CreditsLabel
 @onready var wave_label := $WaveLabel
 
@@ -19,7 +21,8 @@ var ghost: Tower
 
 func _ready() -> void:
 	basic_tower_button.pressed.connect(_buy_basic_tower)
-
+	fireball_tower_button.pressed.connect(_buy_fireball_tower)
+	
 	credits_label.text = "Credits: %d" % PlayerStats.credits
 	wave_label.text = "Wave: %d" % PlayerStats.current_wave
 	PlayerStats.credits_changed.connect(_on_credits_changed)
@@ -49,6 +52,11 @@ func _on_wave_changed(new_wave: int) -> void:
 func _buy_basic_tower() -> void:
 	build_mode = true
 	placing_tower_data = basic_tower_data
+	_create_ghost()
+	
+func _buy_fireball_tower() -> void:
+	build_mode = true
+	placing_tower_data = fireball_tower_data
 	_create_ghost()
 
 func _can_place(tile_coords: Vector2i) -> bool:

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5vjaul3l2qxp"]
+
+[ext_resource type="Script" uid="uid://t22yw6vvrrk5" path="res://scripts/bullet.gd" id="1_xkotr"]
+[ext_resource type="Texture2D" uid="uid://blbtn2oeu3u53" path="res://assets/structures/fireball.png" id="2_xkotr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
+size = Vector2(64, 66)
+
+[node name="Fireball" type="Node2D" unique_id=1880566362]
+y_sort_enabled = true
+script = ExtResource("1_xkotr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1861248625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=976887762]
+position = Vector2(26, 0)
+shape = SubResource("RectangleShape2D_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146746956]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_xkotr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

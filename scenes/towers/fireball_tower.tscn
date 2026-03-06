@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cvfms0t7mpamo"]
+
+[ext_resource type="Script" uid="uid://cn5th8mupncff" path="res://scripts/tower.gd" id="1_fhgk8"]
+[ext_resource type="Texture2D" uid="uid://kns8u376e3so" path="res://assets/structures/fireball_tower.png" id="2_fhgk8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktxwe"]
+radius = 124.5
+height = 330.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxqex"]
+atlas = ExtResource("2_fhgk8")
+region = Rect2(0, 0, 64, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihisw"]
+atlas = ExtResource("2_fhgk8")
+region = Rect2(64, 0, 64, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7pvg"]
+atlas = ExtResource("2_fhgk8")
+region = Rect2(128, 0, 64, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cb47"]
+atlas = ExtResource("2_fhgk8")
+region = Rect2(192, 0, 64, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leju2"]
+atlas = ExtResource("2_fhgk8")
+region = Rect2(256, 0, 64, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycllj"]
+atlas = ExtResource("2_fhgk8")
+region = Rect2(320, 0, 64, 97)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrbg1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxqex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihisw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7pvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cb47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leju2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycllj")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}]
+
+[node name="FireballTower" type="Node2D" unique_id=1004064423]
+script = ExtResource("1_fhgk8")
+
+[node name="Range" type="Area2D" parent="." unique_id=57795818]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=141693511]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ktxwe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1131481119]
+position = Vector2(0, -48.5)
+sprite_frames = SubResource("SpriteFrames_qrbg1")
+animation = &"shooting"
+frame = 4
+frame_progress = 0.262137
+
+[node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=992025518]
+position = Vector2(0, -75)

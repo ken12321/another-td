@@ -5,8 +5,6 @@ class_name Tower
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bullet_spawnpoint = $BulletSpawnPoint
 
-const BULLET_SPAWN_FRAME = 4
-
 var target: Enemy = null
 var enemies_in_range: Array[Enemy] = []
 
@@ -22,7 +20,7 @@ func setup() -> void:
 	$Range.body_exited.connect(_on_enemy_exited)
 
 func _on_frame_changed() -> void:
-	if (animated_sprite.animation == "shooting" && animated_sprite.frame == BULLET_SPAWN_FRAME):
+	if (animated_sprite.animation == "shooting" && animated_sprite.frame == data.bullet_spawn_frame):
 		_spawn_bullet()
 
 func _process(delta: float) -> void:
