@@ -8,7 +8,7 @@
 script = ExtResource("2_ef431")
 enemy_data = ExtResource("3_ef431")
 count = 15
-spawn_interval = 2.0
+spawn_interval = 2.3
 metadata/_custom_type_script = "uid://b7r0qm1lughnk"
 
 [resource]

@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://bjmv30tq4iwn8" path="res://resources/waves/wave_5.tres" id="10_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dv2b188wsncko" path="res://scenes/base.tscn" id="10_vtaks"]
 [ext_resource type="Resource" uid="uid://bbkwy8md4bupe" path="res://resources/waves/wave_6.tres" id="11_rysoc"]
+[ext_resource type="PackedScene" uid="uid://dj3raku8uj3dl" path="res://scenes/menu/pause_menu.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
 texture = ExtResource("2_u5sy4")
@@ -4651,3 +4652,5 @@ is_end = true
 
 [node name="Base" parent="." unique_id=658109281 instance=ExtResource("10_vtaks")]
 position = Vector2(687, 632)
+
+[node name="PauseMenu" parent="." unique_id=733753174 instance=ExtResource("15_ir15t")]

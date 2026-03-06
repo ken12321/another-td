@@ -1,5 +1,6 @@
 extends Node2D
 @onready var wave_manager = $WaveManager
+@onready var pause_menu := $PauseMenu
 
 const round_bonus = 50
 
@@ -18,3 +19,12 @@ func _on_wave_completed() -> void:
 
 func _on_base_destroyed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/loss_menu.tscn")
+
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("ui_cancel") && !pause_menu.visible):  # Escape key by default
+		_toggle_pause()
+
+func _toggle_pause() -> void:
+	var paused = !get_tree().paused
+	get_tree().paused = paused
+	pause_menu.visible = paused
