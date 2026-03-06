@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://5nohoq0airlt"]
+
+[ext_resource type="Texture2D" uid="uid://dg0wnphr8t865" path="res://assets/menu/screen.png" id="1_lj6ex"]
+
+[node name="WinMenu" type="Node2D" unique_id=79254943]
+
+[node name="Screen" type="Sprite2D" parent="." unique_id=1435748017]
+position = Vector2(576, 324.00003)
+scale = Vector2(72, 72.000015)
+texture = ExtResource("1_lj6ex")
+
+[node name="Label2" type="Label" parent="." unique_id=387385303]
+anchors_preset = -1
+anchor_left = -0.09623016
+anchor_top = 1.3651686
+anchor_right = -0.09623016
+anchor_bottom = 1.3651686
+offset_left = 69.0
+offset_top = 395.0
+offset_right = 1077.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 37
+text = "this is where i would put your high score"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1501386249]
+offset_left = 83.0
+offset_top = 76.0
+offset_right = 1091.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 37
+text = "wow you won
+despite my best efforts"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RetryButton" type="Button" parent="." unique_id=2037956834]
+offset_left = 615.0
+offset_top = 321.0
+offset_right = 729.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 29
+text = "retry"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="Button" parent="." unique_id=1697186588]
+offset_left = 431.0
+offset_top = 318.0
+offset_right = 526.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 29
+text = "menu"
+metadata/_edit_use_anchors_ = true

@@ -5,12 +5,7 @@ signal died
 
 # Attacks are only relevant when enemies reach the Base
 @export var data: EnemyData
-#@export var attack_speed: float = 1
-#@export var attack_damage: int = 10
 var _attack_timer: float = 0.0
-
-#@export var max_health: float = 1
-#@export var reward: int = 10
 
 @onready var sprite := $AnimatedSprite2D
 
@@ -20,7 +15,6 @@ var target: TrackNode
 var distance_to_target: float
 var health: float
 
-#const SPEED = 100
 const REACH_THRESHOLD = 5.0
 
 func setup(nodes: Array[Node]) -> void:
@@ -51,7 +45,6 @@ func get_track_progress() -> float:
 	return target.track_position + progress
 
 func _ready() -> void:
-	#health = data.max_health
 	add_to_group("enemies")
 
 func _physics_process(_delta: float) -> void:

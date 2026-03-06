@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://0h8hwnfug1eh"]
+
+[ext_resource type="Texture2D" uid="uid://dg0wnphr8t865" path="res://assets/menu/screen.png" id="1_a23ou"]
+
+[node name="LossMenu" type="Node2D" unique_id=299507222]
+
+[node name="Screen" type="Sprite2D" parent="." unique_id=1464780016]
+position = Vector2(576, 324.00003)
+scale = Vector2(72, 72.000015)
+texture = ExtResource("1_a23ou")
+
+[node name="Label" type="Label" parent="." unique_id=128551838]
+offset_left = 83.0
+offset_top = 76.0
+offset_right = 1091.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 37
+text = "holy shit you suck
+you lose dude"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RetryButton" type="Button" parent="." unique_id=1284956236]
+offset_left = 615.0
+offset_top = 321.0
+offset_right = 729.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 29
+text = "retry"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="Button" parent="." unique_id=1356665845]
+offset_left = 431.0
+offset_top = 318.0
+offset_right = 526.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 29
+text = "menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=1797185594]
+anchors_preset = -1
+anchor_left = -0.09623016
+anchor_top = 1.3651686
+anchor_right = -0.09623016
+anchor_bottom = 1.3651686
+offset_left = 69.0
+offset_top = 395.0
+offset_right = 1077.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 37
+text = "this is where i would put your high score"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

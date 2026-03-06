@@ -14,4 +14,4 @@ func _on_wave_completed() -> void:
 	wave_manager.start_wave()
 
 func _on_base_destroyed() -> void:
-	print("game over")
+	get_tree().change_scene_to_file("res://scenes/loss_menu.tscn")
