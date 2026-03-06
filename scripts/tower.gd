@@ -73,7 +73,7 @@ func _spawn_bullet() -> void:
 	if (!target):
 		return
 	bullet.direction = (target.global_position - spawn_position).normalized()
-	bullet.speed = 1000
+	bullet.speed = data.bullet_speed
 	bullet.damage = data.damage
 
 	get_tree().current_scene.add_child(bullet)
