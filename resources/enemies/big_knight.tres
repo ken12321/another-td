@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ndp6t")
 text = "Big Knight"
-max_health = 500
+max_health = 300
 speed = 50.0
 damage = 20.0
 attack_speed = 1.0

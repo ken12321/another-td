@@ -12,7 +12,7 @@ var _fire_rate_timer: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func setup() -> void:
-	$Range/CollisionShape2D.shape.radius = data.range
+	$Range/CollisionShape2D.shape.radius = data.tower_range
 
 	animated_sprite.frame_changed.connect(_on_frame_changed)
 	

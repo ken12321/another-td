@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_ubxei")
 text = "Knight"
-max_health = 10
+max_health = 20
 speed = 70.0
 damage = 10.0
 attack_speed = 1.0

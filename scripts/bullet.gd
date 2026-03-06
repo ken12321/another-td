@@ -28,5 +28,5 @@ func _on_area_2d_body_entered(body: Node) -> void:
 			var explosion = Explosion.instantiate()
 			explosion.damage = damage
 			explosion.global_position = global_position
-			get_tree().current_scene.add_child(explosion)
+			get_tree().current_scene.call_deferred("add_child", explosion)
 		call_deferred("queue_free")

@@ -11,7 +11,6 @@ func _ready() -> void:
 	add_to_group("track_nodes")
 
 func get_previous_node() -> TrackNode:
-	var previous_node
 	if (track_position > 0):
 		return track_nodes[track_position - 1]
 	else:

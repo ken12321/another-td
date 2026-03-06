@@ -8,8 +8,8 @@
 script = ExtResource("2_1r6fu")
 text = "Basic Tower"
 cost = 300
-damage = 10.0
-range = 130.0
+damage = 10
+tower_range = 500.0
 fire_rate = 0.75
 tower_scene = ExtResource("3_1r6fu")
 bullet_scene = ExtResource("1_0at53")
