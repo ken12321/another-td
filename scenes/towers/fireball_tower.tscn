@@ -72,7 +72,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ktxwe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1131481119]
-position = Vector2(0, -48.5)
+position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_qrbg1")
 animation = &"shooting"
 frame = 4

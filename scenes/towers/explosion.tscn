@@ -53,6 +53,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_omqaj"]
+radius = 43.0
+
 [node name="Explosion" type="Node2D" unique_id=2146582035]
 script = ExtResource("2_omqaj")
 
@@ -61,3 +64,10 @@ scale = Vector2(2.7599993, 2.7599993)
 sprite_frames = SubResource("SpriteFrames_y6seu")
 animation = &"explode"
 speed_scale = 2.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=905488135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1548594388]
+shape = SubResource("CircleShape2D_omqaj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

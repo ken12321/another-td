@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("1_ttdj4")
 text = "Fireball Tower"
-cost = 1
-damage = 1.0
+cost = 425
+damage = 15.0
 range = 130.0
 fire_rate = 0.45
 tower_scene = ExtResource("3_cnmb6")

@@ -10,7 +10,7 @@ extends Control
 # Game scene
 @export var container: Node2D
 @export var tile_map : TileMapLayer
-@export var track: Node
+@export var track_tile_map: TileMapLayer
 
 var occupied_tiles: Dictionary = {}
 var blocked_tiles: Dictionary = {}
@@ -20,6 +20,7 @@ var placing_tower_data : TowerData
 var ghost: Tower
 
 func _ready() -> void:
+	_populate_blocked_tiles()
 	basic_tower_button.pressed.connect(_buy_basic_tower)
 	fireball_tower_button.pressed.connect(_buy_fireball_tower)
 	
@@ -37,6 +38,12 @@ func _process(_delta: float) -> void:
 			ghost.modulate = Color(1, 0, 0, 0.5)
 		else:
 			ghost.modulate = Color(1, 1, 1, 0.5)
+
+func _populate_blocked_tiles() -> void:
+	for cell in track_tile_map.get_used_cells():
+		var world_pos = track_tile_map.to_global(track_tile_map.map_to_local(cell))
+		var local_pos = tile_map.local_to_map(tile_map.to_local(world_pos))
+		blocked_tiles[local_pos] = true
 
 # For isometric grid snapping
 func _get_snapped_position(world_position: Vector2) -> Vector2:
@@ -70,9 +77,14 @@ func _input(event: InputEvent) -> void:
 		if (event.button_index == MOUSE_BUTTON_LEFT && !event.pressed && build_mode):
 			_place_tower(get_global_mouse_position())
 			build_mode = false
+		# debug, delete lateer
 		if (event.button_index == MOUSE_BUTTON_RIGHT && !event.pressed):
 			var coord = tile_map.local_to_map(tile_map.to_local(get_global_mouse_position()))
-			tile_map.set_cell(coord, 2, Vector2i(0,0))
+			var tower_tiles = _get_tower_tiles(coord)
+			print("origin: ", coord)
+			print("tower tiles: ", tower_tiles)
+			for t in tower_tiles:
+				print("  ", t, " blocked: ", blocked_tiles.has(t))
 
 func _place_tower(world_position: Vector2) -> void:
 	var tile_coords = tile_map.local_to_map(tile_map.to_local(world_position))
@@ -98,11 +110,11 @@ func _place_tower(world_position: Vector2) -> void:
 	tower_scene.setup()
 	_clear_ghost()
 
-func _get_tower_tiles(origin: Vector2i) -> Array[Vector2i]: #todo make this more functional for larger/smaller towers
-	var right = tile_map.get_neighbor_cell(origin, TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE)
-	var left = tile_map.get_neighbor_cell(origin, TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE)
-	var bottom = tile_map.get_neighbor_cell(left, TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE)
-	return [origin, left, right, bottom]
+func _get_tower_tiles(origin: Vector2i) -> Array[Vector2i]:
+	var top_left = tile_map.get_neighbor_cell(origin, TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE)
+	var top_right = tile_map.get_neighbor_cell(origin, TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE)
+	var top = tile_map.get_neighbor_cell(top_left, TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE)
+	return [origin, top_left, top_right, top]
 
 func _create_ghost() -> void:
 	if (ghost):
