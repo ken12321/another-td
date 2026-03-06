@@ -29,4 +29,4 @@ func _on_area_2d_body_entered(body: Node) -> void:
 			explosion.damage = damage
 			explosion.global_position = global_position
 			get_tree().current_scene.add_child(explosion)
-		queue_free()
+		call_deferred("queue_free")
