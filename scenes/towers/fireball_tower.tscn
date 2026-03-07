@@ -65,6 +65,11 @@ animations = [{
 [node name="FireballTower" type="Node2D" unique_id=1004064423]
 script = ExtResource("1_fhgk8")
 
+[node name="SelectArea" type="Area2D" parent="." unique_id=58404408]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SelectArea" unique_id=363178927]
+polygon = PackedVector2Array(-32, -7, 0, 8, 32, -7, 0, -21)
+
 [node name="Range" type="Area2D" parent="." unique_id=57795818]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=141693511]

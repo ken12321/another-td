@@ -58,6 +58,13 @@ animations = [{
 [node name="Tower" type="Node2D" unique_id=1004064423]
 script = ExtResource("1_ay4al")
 
+[node name="SelectArea" type="Area2D" parent="." unique_id=1912255664]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SelectArea" unique_id=1851294703]
+position = Vector2(1.1920929e-06, -7)
+scale = Vector2(1.25, 0.58593744)
+polygon = PackedVector2Array(-25.599998, 0, -9.536743e-07, 25.600002, 25.599998, 0, -9.536743e-07, -25.600002)
+
 [node name="Range" type="Area2D" parent="." unique_id=57795818]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=141693511]

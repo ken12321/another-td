@@ -18,6 +18,7 @@ var blocked_tiles: Dictionary = {}
 var build_mode : bool = false
 var placing_tower_data : TowerData
 var ghost: Tower
+var selected_tower: Tower = null
 
 func _ready() -> void:
 	_populate_blocked_tiles()
@@ -30,9 +31,11 @@ func _ready() -> void:
 	PlayerStats.wave_changed.connect(_on_wave_changed)
 
 func _process(_delta: float) -> void:
+	var snapped_position = _get_snapped_position(get_global_mouse_position())
+	var tile_coords = tile_map.local_to_map(tile_map.to_local(snapped_position))
+		
 	if ghost:
-		var snapped_position = _get_snapped_position(get_global_mouse_position())
-		var tile_coords = tile_map.local_to_map(tile_map.to_local(snapped_position))
+		
 		ghost.global_position = snapped_position
 		if (!_can_place(tile_coords)):
 			ghost.modulate = Color(1, 0, 0, 0.5)
@@ -74,9 +77,14 @@ func _can_place(tile_coords: Vector2i) -> bool:
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton):
-		if (event.button_index == MOUSE_BUTTON_LEFT && !event.pressed && build_mode):
-			_place_tower(get_global_mouse_position())
-			build_mode = false
+		if (event.button_index == MOUSE_BUTTON_LEFT && !event.pressed):
+			if (build_mode):
+				_place_tower(get_global_mouse_position())
+				build_mode = false
+			#if (selected_tower):
+				#selected_tower.deselect()
+				#selected_tower = null
+
 		# debug, delete lateer
 		if (event.button_index == MOUSE_BUTTON_RIGHT && !event.pressed):
 			var coord = tile_map.local_to_map(tile_map.to_local(get_global_mouse_position()))
@@ -107,8 +115,15 @@ func _place_tower(world_position: Vector2) -> void:
 	container.add_child(tower_scene)
 	tower_scene.global_position = snapped_position
 	tower_scene.data = placing_tower_data.duplicate(true)
+	tower_scene.tower_selected.connect(_on_tower_selected)
 	tower_scene.setup()
 	_clear_ghost()
+
+func _on_tower_selected(tower: Tower) -> void:
+	if selected_tower:
+		selected_tower.deselect()
+	selected_tower = tower
+	selected_tower.select()
 
 func _get_tower_tiles(origin: Vector2i) -> Array[Vector2i]:
 	var top_left = tile_map.get_neighbor_cell(origin, TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE)

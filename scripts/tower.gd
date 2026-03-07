@@ -1,23 +1,41 @@
 extends Node2D
 class_name Tower
 
+signal tower_selected(tower: Tower)
+
 @export var data: TowerData
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bullet_spawnpoint = $BulletSpawnPoint
+@onready var select_area = $SelectArea
 
 var target: Enemy = null
 var enemies_in_range: Array[Enemy] = []
-
 var _fire_rate_timer: float = 0.0
+var is_selected: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func setup() -> void:
+	select_area.input_pickable = true
+	select_area.input_event.connect(_on_input_event)
 	$Range/CollisionShape2D.shape.radius = data.tower_range
 
 	animated_sprite.frame_changed.connect(_on_frame_changed)
 	
 	$Range.body_entered.connect(_on_enemy_entered)
 	$Range.body_exited.connect(_on_enemy_exited)
+
+func _on_input_event(_viewport, event: InputEvent, _shape_idx) -> void:
+	if (event is InputEventMouseButton):
+		if (event.button_index == MOUSE_BUTTON_LEFT && event.pressed):
+			tower_selected.emit(self)
+
+func select() -> void:
+	is_selected = true
+	animated_sprite.modulate = Color(1.5, 1.5, 0.5)
+
+func deselect() -> void:
+	is_selected = false
+	animated_sprite.modulate = Color.WHITE
 
 func _on_frame_changed() -> void:
 	if (animated_sprite.animation == "shooting" && animated_sprite.frame == data.bullet_spawn_frame):
